@@ -22,9 +22,10 @@
  */
 function getIntervalArray(start, end) {
   const intervalArrayLength = end - start + 1;
-  const intervalArray = Array.from(intervalArrayLength)
-    .fill(null)
-    .map((_, idx) => start + idx);
+  const intervalArray = Array.from(
+    { length: intervalArrayLength },
+    (_, idx) => start + idx
+  );
 
   return intervalArray;
 }
@@ -81,8 +82,8 @@ function findElement(arr, value) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, value) {
+  return arr.filter((item) => item === value).length;
 }
 
 /**
